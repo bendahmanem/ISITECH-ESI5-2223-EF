@@ -9,9 +9,12 @@ partial class Program
         using (Northwind db = new())
         {
             SectionTitle("Liste des catégories");
+
             IQueryable<Category>? categories = db.Categories?
+                .TagWith("GetCategories")
                 .Include(c => c.Products);
 
+            Info($"ToQueryString: {categories?.ToQueryString()}");
             if ((categories is null) || (!categories.Any()))
             {
                 Fail("Aucune catégorie trouvée");

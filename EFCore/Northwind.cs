@@ -16,6 +16,7 @@ public class Northwind : DbContext
         ForegroundColor = color;
 
         optionsBuilder.UseSqlite(connection);
+        // optionsBuilder.LogTo(WriteLine).EnableSensitiveDataLogging();
 
     }
 
