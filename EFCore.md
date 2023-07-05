@@ -113,3 +113,47 @@ Voici un apperçu des technologies utilisees par Microsoft pour creer des sites 
   Contient un projet ASP.NET Core d'API Rest.
   Peut etre utilisé avec un framework JS ou Blazor.
 - EFCore.BlazorServer: un projet ASP.NET Core Blazor Server
+
+Quelques commandes utiles pour la gestion des solutions:
+
+Creer une solution dans le repertoire courant :
+
+```sh
+	dotnet new sln --name [nom de la solution]
+```
+
+Ajouter un projet a une solution :
+
+```sh
+	dotnet add sln [chemin relatif jusqu'au .csproj]
+```
+
+Ajouter un package a un projet (.csproj dans le repertoire courant):
+
+```sh
+	dotnet add package [nom du paquet]  -v [version]
+```
+
+Supprimer un package:
+
+```sh
+	dotnet remove package [nom du paquet]
+```
+
+Restaurer les paquets (npm install!):
+
+```sh
+	dotnet restore
+```
+
+Creer un projet a partir d'un template:
+
+```sh
+	dotnet new --install [nom du template]
+```
+
+Lister les templates :
+
+```sh
+	dotnet new list
+```
