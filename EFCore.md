@@ -83,3 +83,33 @@ Dans le fichier Program.Queries.cs creez une methode qui permet d'effectuer des 
 - creez une requete pour les produit dont le prix est superieur au prix entre par l'utilisateur (avec LINQ)
 - recherchez et definissez LINQ, l'avez-vous deja utilise ? Si oui, quand ?
 - parcourez le resultat de la requete et afficher le nom, le prix et le stock (pour chaque prduit donc)
+
+## Parlons un peu de .NET Core
+
+Voici un apperçu des technologies utilisees par Microsoft pour creer des sites webs et des web Services :
+
+- ASP (Active Server Pages): une plateforme qui a pour but des sites web dynamiques server side. Les fichiers contiennent un mix d'HTML et de code.
+- ASP.NET Web Forms: Drag n Drop pour les composants et le code des events est ecrit en VB ou en C#
+- WCF (Windows Communication Foundation) : Permet au dev de creer des Web Service en SOAP ou en REST
+- ASP.NET MVC (2009): Premiere mise en place du pattern "Separation of Concerns". La couche model stocke les donnees temporairement, la couche View afficher les donnees en utilisant des UIs et la couche Controller recupere le model et le transmets a la vue. Cette separation favorise la reutilisabilite du code et les test unitaires
+- ASP.NET API: Permet aux developpeurs de creer des Web services avec http (REST)
+- ASP.NET SignalR: Permet aux dev de mettre en place de la communication en temps reel, il s'agit d'une couche d'abstraction sur des technologies plus complexes (WebSockets).
+- ASP.NET Core: combine les implementations les plus modernes du .NET Framework (MVC, Web API, SignalR, Razor Pages, gRPC, Blazor). Microsoft fournit enfin! une plateforme de developement cross-platform.
+
+### Structurer un projet .NET CORE :
+
+- EFCore.Common:
+  Il s'agit d'une bibliotheque de classe pour les types communs tels que : les interfaces, enums, classes, structs. Il peut etre reutiliser par plusieurs projets.
+- EFCore.Common.EntityModels: une classlib qui contient les modele entite d'EF Core
+- EFCore.Common.DataContext:
+  une classlib qui contient le context EF Core (DbContext) avec les dependances specifiques au provider de bdd
+- EFCore.Web:
+  Projet de site web statique, ou un projet razor pages
+- EFCore.Razor.Component:
+  une classlib pour des Razor Pages utilisees au sein de plusieurs projets
+- EFCore.Mvc:
+  Pour la creaction d'app Web avec le patter MVC
+- EFCore.WebApi:
+  Contient un projet ASP.NET Core d'API Rest.
+  Peut etre utilisé avec un framework JS ou Blazor.
+- EFCore.BlazorServer: un projet ASP.NET Core Blazor Server
